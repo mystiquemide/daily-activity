@@ -5,11 +5,11 @@ import random
 
 # ---- CONFIG ----
 FILE_NAME   = "commits.md"
-START_DATE  = datetime(2025, 3, 20)   # yesterday
-END_DATE    = datetime(2025, 3, 21)   # today
-MIN_COMMITS = 10
-MAX_COMMITS = 20
-SKIP_CHANCE = 0.0                     # no skipping
+START_DATE  = datetime(2025, 3, 21)   # today
+END_DATE    = datetime(2025, 3, 22)   # tomorrow (covers full today)
+MIN_COMMITS = 15
+MAX_COMMITS = 25
+SKIP_CHANCE = 0.0
 # ----------------
 
 def run(cmd, env=None):
@@ -55,5 +55,5 @@ while current_date <= END_DATE:
 
 print(f"\n🎯 Total commits created: {total}")
 print("🚀 Pushing to GitHub...")
-run("git push -u origin main")
+run("git push origin main")
 print("✅ Done! Check your GitHub contribution graph.")
